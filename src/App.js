@@ -1,6 +1,8 @@
 import './App.css';
+import { Switch,Route,Redirect } from 'react-router-dom';
 //components
 import Store from './components/Store';
+import ProductDetails from './components/ProductDetails';
 
 //Context
 import ProductContextProvider from './context/ProductContextProvider';
@@ -8,7 +10,12 @@ import ProductContextProvider from './context/ProductContextProvider';
 function App() {
   return (
     <ProductContextProvider>
-      <Store/>
+      <Switch>
+        <Route path="/products/:id" component={ProductDetails}/>
+        <Route path="/products" component={Store}/>
+
+        <Redirect to="/products"/>
+      </Switch>
     </ProductContextProvider>
   );
 }
