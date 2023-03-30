@@ -18,11 +18,10 @@ function App() {
         <Switch>
           <Route path="/products/:id" component={ProductDetails}/>
           <Route path="/products" component={Store}/>
-          <Route path="/Cart" component={ShopCart}/>
+          <Route path="/cart" component={ShopCart}/>
           <Redirect to="/products"/>
         </Switch>
       </CartContextProvider>
-      
     </ProductContextProvider>
   );
 }
